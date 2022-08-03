@@ -4,9 +4,11 @@
   <div class="flex items-center justify-center h-screen">
     
 	<button @click="setnotification()" class="p-10 font-bold text-white bg-indigo-800 border rounded-lg shadow-lg">
-		button
+		first sound
 	</button>
-	
+		<button @click="setnotification2()" class="p-10 font-bold text-white bg-indigo-800 border rounded-lg shadow-lg">
+		second sound
+	</button>
   </div>
 
   </div>
@@ -27,6 +29,9 @@ onBeforeMount(async() => {
 const notificaton = useLocalNotification()
 
 async function setnotification() {
-  notificaton.sendLocal("test","test",345)
+  notificaton.sendLocal("test","sound 1",345)
+}
+async function setnotification2() {
+  notificaton.sendLocal2("test","sound 2",345)
 }
 </script>

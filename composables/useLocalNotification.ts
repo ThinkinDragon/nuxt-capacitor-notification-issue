@@ -77,6 +77,25 @@ export const useLocalNotification = defineStore("notification", {
     }).then(() => {
         
     });
+    },
+    async sendLocal2(title,body,id) {
+      console.log("here");
+      LocalNotifications.schedule({
+        notifications: [{
+            title: title,
+            body: body,
+            id: id,
+            attachments: null,
+            actionTypeId: "",
+            extra: null,
+            sound:'beep.mp3',
+            // trigger: {
+            //     at: new Date(Date.getTime() + (1000 * 1))
+            // },
+        }]
+    }).then(() => {
+        
+    });
     }
   },
 });
